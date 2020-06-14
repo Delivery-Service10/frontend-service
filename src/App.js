@@ -3,6 +3,8 @@ import './App.css';
 import Toolbar from './components/Toolbar/Toolbar'
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop"
+import {Switch,Route, BrowserRouter, Link} from 'react-router-dom'
+import CreateAccountPage from "./components/pages/create-account/create-account.component";
 
 class App extends Component {
     state = {
@@ -28,7 +30,11 @@ class App extends Component {
             <SideDrawer show={this.state.sideDrawerOpen}/>
             {backdrop}
           <main style={{marginTop: '56px'}}>
-            <p>This is the content to be added later</p>
+              <BrowserRouter>
+                  <Switch>
+                      <Route exact path='/create-account' component={CreateAccountPage}></Route>
+                  </Switch>
+              </BrowserRouter>
           </main>
         </div>
     );
