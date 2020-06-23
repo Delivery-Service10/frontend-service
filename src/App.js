@@ -5,6 +5,7 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop"
 import {Switch,Route, BrowserRouter, Link} from 'react-router-dom'
 import CreateAccountPage from "./components/pages/create-account/create-account.component";
+import LoginPage from "./components/pages/login/login.component";
 
 class App extends Component {
     state = {
@@ -33,6 +34,7 @@ class App extends Component {
               <BrowserRouter>
                   <Switch>
                       <Route exact path='/create-account' component={CreateAccountPage}></Route>
+                      <Route exact path='/login' component={LoginPage}></Route>
                   </Switch>
               </BrowserRouter>
           </main>
