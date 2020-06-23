@@ -22,7 +22,8 @@ class LoginPage extends React.Component{
     handleChange = async event =>{
         const {value, name}= event.target;
         await this.setState({[name]:value});
-        //Don't remove, I'm using this as template. Uyiren
+
+        // Don't remove, I'm using this as template. Uyiren
         // axios.get('http://127.0.0.1:5000/store/')
         //     .then(function (response) {
         //         // handle success
