@@ -12,8 +12,6 @@ class LoginPage extends React.Component{
             password:''
         }
     }
-
-
     handleSubmit = async event => {
         event.preventDefault();
         const {email, password} = this.state;
@@ -24,13 +22,7 @@ class LoginPage extends React.Component{
             .catch(e =>{
                 console.log(e)
             })
-        wait(7000);
     }
-
-
-
-
-
         // await axios.post('http://127.0.0.1:5010/login/', {
         //     email: this.state.email,
         //     password: this.state.password
