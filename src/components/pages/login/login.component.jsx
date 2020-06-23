@@ -14,9 +14,34 @@ class LoginPage extends React.Component{
     }
 
 
-    handleSubmit = event => {
-
+    handleSubmit = async event => {
+        event.preventDefault();
+        const {email, password} = this.state;
+        await axios.post('http://127.0.0.1:5010/login/', {email, password})
+            .then(response =>{
+                console.log(response)
+            })
+            .catch(e =>{
+                console.log(e)
+            })
+        wait(7000);
     }
+
+
+
+
+
+        // await axios.post('http://127.0.0.1:5010/login/', {
+        //     email: this.state.email,
+        //     password: this.state.password
+        // })
+        //     .then(response =>{
+        //         console.log(response)
+        //     })
+        //     .catch(e =>{
+        //         console.log(e)
+        //     })
+        // wait(10000)
 
 
     handleChange = async event =>{
@@ -67,7 +92,16 @@ class LoginPage extends React.Component{
             </div>
         );
     }
+
 }
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+        end = new Date().getTime();
+    }
+}
+
 
 export default LoginPage;
 
