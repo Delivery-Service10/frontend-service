@@ -26,37 +26,10 @@ class CreateAccountPage extends React.Component{
                 console.log(e)
             })
     }
-    // await axios.post('http://127.0.0.1:5010/login/', {
-    //     email: this.state.email,
-    //     password: this.state.password
-    // })
-    //     .then(response =>{
-    //         console.log(response)
-    //     })
-    //     .catch(e =>{
-    //         console.log(e)
-    //     })
-    // wait(10000)
-
 
     handleChange = async event =>{
         const {value, name}= event.target;
         await this.setState({[name]:value});
-
-        // Don't remove, I'm using this as template. Uyiren
-        // axios.get('http://127.0.0.1:5000/store/')
-        //     .then(function (response) {
-        //         // handle success
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         // handle error
-        //         console.log(error);
-        //     })
-        //     .finally(function () {
-        //         // always executed
-        //     });
-
     }
     render() {
         return(
@@ -114,7 +87,5 @@ function wait(ms){
         end = new Date().getTime();
     }
 }
-
-
 export default CreateAccountPage;
 
