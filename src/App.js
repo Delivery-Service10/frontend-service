@@ -3,13 +3,15 @@ import './App.css';
 import Toolbar from './components/Toolbar/Toolbar'
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop"
-import {Switch,Route, BrowserRouter, Link} from 'react-router-dom'
+import {Switch,Route, BrowserRouter} from 'react-router-dom'
 import CreateAccountPage from "./components/pages/create-account/create-account.component";
 import LoginPage from "./components/pages/login/login.component";
+import HomePage from "./components/pages/homepage/homepage.component";
 
 class App extends Component {
     state = {
         sideDrawerOpen: false
+
     };
   drawerToggleClickHandler = () =>{
       this.setState((prevState) => {
@@ -33,8 +35,9 @@ class App extends Component {
           <main style={{marginTop: '56px'}}>
               <BrowserRouter>
                   <Switch>
-                      <Route exact path='/create-account' component={CreateAccountPage}></Route>
-                      <Route exact path='/login' component={LoginPage}></Route>
+                      <Route exact path='/' component={HomePage}/>
+                      <Route exact path='/create-account' component={CreateAccountPage}/>
+                      <Route exact path='/login' component={LoginPage}/>
                   </Switch>
               </BrowserRouter>
           </main>
