@@ -3,7 +3,6 @@ import axios from 'axios';
 import './create-account.styles.scss';
 import FormInput from "../../form-input/form-input.component";
 import CustomButton from "../../custom-button/custom-button.component";
-
 class CreateAccountPage extends React.Component{
     constructor(props) {
         super(props);
@@ -79,13 +78,6 @@ class CreateAccountPage extends React.Component{
         );
     }
 
-}
-function wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-        end = new Date().getTime();
-    }
 }
 export default CreateAccountPage;
 

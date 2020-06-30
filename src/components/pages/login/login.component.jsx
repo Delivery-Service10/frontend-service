@@ -4,6 +4,7 @@ import './login.styles.scss';
 import FormInput from "../../form-input/form-input.component";
 import CustomButton from "../../custom-button/custom-button.component";
 
+
 class LoginPage extends React.Component{
     constructor(props) {
         super(props);
@@ -15,15 +16,31 @@ class LoginPage extends React.Component{
     handleSubmit = async event => {
         event.preventDefault();
         const {email, password} = this.state;
-        await axios.post('http://127.0.0.1:5010/login/', {email, password})
+        await axios.post('http://localhost:5010/login/',
+            {email, password},
+            {withCredentials: true}
+        )
             .then(response =>{
-                console.log(response)
+                // console.log(response.data['Name'])
+                localStorage.setItem('Name', response.data['Name']);
+
             })
             .catch(e =>{
                 console.log(e)
             })
     }
-
+    handleSecond = async event => {
+        event.preventDefault();
+        await axios.post('http://localhost:5010/test/',
+            {},
+            {withCredentials: true}
+        )
+            .then(response =>{
+            })
+            .catch(e =>{
+                console.log(e)
+            })
+    }
     handleChange = async event =>{
         const {value, name}= event.target;
         await this.setState({[name]:value});
@@ -59,42 +76,4 @@ class LoginPage extends React.Component{
     }
 
 }
-function wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-        end = new Date().getTime();
-    }
-}
-
-
 export default LoginPage;
-
-
-// Don't remove, I'm using this as template. Uyiren
-// axios.get('http://127.0.0.1:5000/store/')
-//     .then(function (response) {
-//         // handle success
-//         console.log(response);
-//     })
-//     .catch(function (error) {
-//         // handle error
-//         console.log(error);
-//     })
-//     .finally(function () {
-//         // always executed
-//     });
-
-
-
-// await axios.post('http://127.0.0.1:5010/login/', {
-//     email: this.state.email,
-//     password: this.state.password
-// })
-//     .then(response =>{
-//         console.log(response)
-//     })
-//     .catch(e =>{
-//         console.log(e)
-//     })
-// wait(10000)
