@@ -3,6 +3,8 @@ import axios from 'axios';
 import './login.styles.scss';
 import FormInput from "../../form-input/form-input.component";
 import CustomButton from "../../custom-button/custom-button.component";
+import {setCurrentUser} from "../../../redux/user/user.actions";
+import {connect} from 'react-redux';
 
 
 class LoginPage extends React.Component{
@@ -17,6 +19,7 @@ class LoginPage extends React.Component{
     handleSubmit = async event => {
         event.preventDefault();
         const {email, password} = this.state;
+        const {setCurrentUser} = this.props;
         await axios.post('http://localhost:5010/login/',
             {email, password},
             {withCredentials: true}
@@ -26,6 +29,13 @@ class LoginPage extends React.Component{
                 if (response.status === 200) {
                     console.log(response.status)
                     localStorage.setItem('Name', response.data['Name']);
+                    setCurrentUser(response.data);
+
+
+                    this.setState({['email']: ''});
+                    this.setState({['password']: ''});
+
+
                 }
                 else if (response.status !== 200){
                     // console.log('xD')
@@ -85,4 +95,15 @@ class LoginPage extends React.Component{
     }
 
 }
-export default LoginPage;
+const mapStateToProps= ({user})=>({
+    currentUser: user.currentUser
+})
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user =>dispatch(setCurrentUser(user))
+});
+
+
+export default connect(
+    mapStateToProps, mapDispatchToProps
+)(LoginPage);
