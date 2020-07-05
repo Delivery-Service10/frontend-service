@@ -28,20 +28,21 @@ class App extends Component {
           backdrop = <Backdrop click={this.backdropClickHandler}/>;
       }
     return (
+        <BrowserRouter>
         <div style={{height: '100%'}}>
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
             <SideDrawer show={this.state.sideDrawerOpen}/>
             {backdrop}
           <main style={{marginTop: '56px'}}>
-              <BrowserRouter>
                   <Switch>
                       <Route exact path='/' component={HomePage}/>
                       <Route exact path='/create-account' component={CreateAccountPage}/>
                       <Route exact path='/login' component={LoginPage}/>
                   </Switch>
-              </BrowserRouter>
+
           </main>
         </div>
+        </BrowserRouter>
     );
   }
 }

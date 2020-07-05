@@ -10,7 +10,8 @@ class LoginPage extends React.Component{
         super(props);
         this.state={
             email: '',
-            password:''
+            password:'',
+            errorMessage:''
         }
     }
     handleSubmit = async event => {
@@ -22,11 +23,19 @@ class LoginPage extends React.Component{
         )
             .then(response =>{
                 // console.log(response.data['Name'])
-                localStorage.setItem('Name', response.data['Name']);
-
+                if (response.status === 200) {
+                    console.log(response.status)
+                    localStorage.setItem('Name', response.data['Name']);
+                }
+                else if (response.status !== 200){
+                    // console.log('xD')
+                    this.setState({['email']: ''});
+                    this.setState({['password']: ''});
+                    // this.setState({['password']: ''});
+                }
             })
             .catch(e =>{
-                console.log(e)
+
             })
     }
     handleSecond = async event => {
@@ -36,9 +45,9 @@ class LoginPage extends React.Component{
             {withCredentials: true}
         )
             .then(response =>{
+                // console.log(response)
             })
             .catch(e =>{
-                console.log(e)
             })
     }
     handleChange = async event =>{
