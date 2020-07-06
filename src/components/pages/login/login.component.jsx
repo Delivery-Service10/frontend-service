@@ -3,8 +3,9 @@ import axios from 'axios';
 import './login.styles.scss';
 import FormInput from "../../form-input/form-input.component";
 import CustomButton from "../../custom-button/custom-button.component";
-import {setCurrentUser} from "../../../redux/user/user.actions";
+// import {setCurrentUser} from "../../../redux/user/user.actions";
 import {connect} from 'react-redux';
+import {userActions} from '../../../redux/user/user.actions'
 
 
 class LoginPage extends React.Component{
@@ -13,40 +14,19 @@ class LoginPage extends React.Component{
         this.state={
             email: '',
             password:'',
-            errorMessage:''
-        }
+            submitted: false
+        };
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleSubmit = async event => {
         event.preventDefault();
+        this.setState({submitted: true})
         const {email, password} = this.state;
-        const {setCurrentUser} = this.props;
-        await axios.post('http://localhost:5010/login/',
-            {email, password},
-            {withCredentials: true}
-        )
-            .then(response =>{
-                // console.log(response.data['Name'])
-                if (response.status === 200) {
-                    console.log(response.status)
-                    localStorage.setItem('Name', response.data['Name']);
-                    setCurrentUser(response.data);
-
-
-                    this.setState({['email']: ''});
-                    this.setState({['password']: ''});
-
-
-                }
-                else if (response.status !== 200){
-                    // console.log('xD')
-                    this.setState({['email']: ''});
-                    this.setState({['password']: ''});
-                    // this.setState({['password']: ''});
-                }
-            })
-            .catch(e =>{
-
-            })
+        const {dispatch} = this.props;
+        if (email && password){
+            dispatch(userActions.login(email, password))
+        }
     }
     handleSecond = async event => {
         event.preventDefault();
@@ -65,6 +45,8 @@ class LoginPage extends React.Component{
         await this.setState({[name]:value});
     }
     render() {
+        const {loggingIn} = this.props;
+        const {username, password, submitted} = this.state
         return(
             <div>
                 <h2>I already have an account</h2>
@@ -95,15 +77,14 @@ class LoginPage extends React.Component{
     }
 
 }
-const mapStateToProps= ({user})=>({
-    currentUser: user.currentUser
-})
-
-const mapDispatchToProps = dispatch => ({
-    setCurrentUser: user =>dispatch(setCurrentUser(user))
-});
-
-
-export default connect(
-    mapStateToProps, mapDispatchToProps
-)(LoginPage);
+function mapStateToProps(state){
+    const {loggingIn} = state.authentication;
+    return{
+        loggingIn
+    };
+}
+// const mapDispatchToProps = dispatch => ({
+//     // setCurrentUser: user =>dispatch(setCurrentUser(user))
+// });
+const connectedLoginPage = connect(mapStateToProps)(LoginPage);
+export  {connectedLoginPage as LoginPage};

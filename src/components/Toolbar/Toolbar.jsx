@@ -2,9 +2,9 @@ import React from "react";
 import './Toolbar.scss'
 import '../SideDrawer/DrawerToggleButton'
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setCurrentUser} from "../../redux/user/user.actions";
+// import {setCurrentUser} from "../../redux/user/user.actions";
 
 const toolbar = (props,{currentUser}) => (
     <header className="toolbar">
@@ -16,42 +16,42 @@ const toolbar = (props,{currentUser}) => (
                 <a href="/">THE LOGO</a>
             </div>
             <div className="spacer"/>
-            <div className="toolbar_navigation-items">
-                {
-                    props.currentUser?
-                        (
-                            <ul>
-                                <li>
-                                    <Link to="/about-me">MyAccount</Link>
-                                </li>
-                                <li>
-                                    <Link to="/logout">Logout</Link>
+            {/*<div className="toolbar_navigation-items">*/}
+            {/*    {*/}
+            {/*        // props.currentUser?*/}
+            {/*            (*/}
+            {/*                <ul>*/}
+            {/*                    <li>*/}
+            {/*                        <Link to="/about-me">MyAccount</Link>*/}
+            {/*                    </li>*/}
+            {/*                    <li>*/}
+            {/*                        <Link to="/logout">Logout</Link>*/}
 
-                                </li>
-                            </ul>
-                        ):(
-                            <ul>
-                                <li>
-                                    <Link to="/login">Login</Link>
-                                </li>
-                                <li>
-                                    <Link to="/create-account">Create Account</Link>
-                                </li>
-                            </ul>
+            {/*                    </li>*/}
+            {/*                </ul>*/}
+            {/*            // ):(*/}
+            {/*                <ul>*/}
+            {/*                    <li>*/}
+            {/*                        <Link to="/login">Login</Link>*/}
+            {/*                    </li>*/}
+            {/*                    <li>*/}
+            {/*                        <Link to="/create-account">Create Account</Link>*/}
+            {/*                    </li>*/}
+            {/*                </ul>*/}
 
-                        )
-                }
-            </div>
+            {/*            )*/}
+            {/*    }*/}
+            {/*</div>*/}
         </nav>
     </header>
 );
 
 const mapStateToProps= ({user})=>({
-    currentUser: user.currentUser
+    // currentUser: user.currentUser
 })
 
 const mapDispatchToProps = dispatch => ({
-    setCurrentUser: user =>dispatch(setCurrentUser(user))
+    // setCurrentUser: user =>dispatch(setCurrentUser(user))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps())(toolbar);

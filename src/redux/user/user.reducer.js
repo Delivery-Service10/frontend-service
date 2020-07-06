@@ -1,18 +1,20 @@
-import {userActionTypes} from './user.types'
+import {userConstants} from "./user.constants";
 
-const INITIAL_STATE = {
-    currentUser: null
-}
-
-const userReducer = (state = INITIAL_STATE, action)=>{
+export function users(state = {}, action) {
     switch (action.type) {
-        case userActionTypes.SET_CURRENT_USER:
+        case userConstants.GETALL_REQUEST:
             return {
-                ...state,
-                currentUser: action.payload
-            }
+                loading: true
+            };
+        case userConstants.GETALL_SUCCESS:
+            return {
+                items: action.users
+            };
+        case userConstants.GETALL_FAILURE:
+            return {
+                error: action.error
+            };
         default:
-            return state;
+            return state
     }
 }
-export default userReducer;

@@ -5,7 +5,7 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop"
 import {Switch,Route, BrowserRouter, Redirect} from 'react-router-dom'
 import CreateAccountPage from "./components/pages/create-account/create-account.component";
-import LoginPage from "./components/pages/login/login.component";
+import {LoginPage} from "./components/pages/login/login.component";
 import HomePage from "./components/pages/homepage/homepage.component";
 import {connect} from 'react-redux';
 
@@ -46,8 +46,8 @@ class App extends Component {
                               (<LoginPage/>)
                       }/>
                       <Route exact path='/create-account' render={
-                          ()=>this.props.currentUser?
-                              (<Redirect to='/'/>):
+                          // ()=>this.props.currentUser?
+                          //     (<Redirect to='/'/>):
                               (<CreateAccountPage/>)
                       }/>
                   </Switch>
@@ -59,7 +59,7 @@ class App extends Component {
   }
 }
 const mapStateToProps= ({user})=>({
-    currentUser: user.currentUser
+    // currentUser: user.currentUser
 })
 
 const mapDispatchToProps = dispatch => ({
