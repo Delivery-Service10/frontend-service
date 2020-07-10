@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3f0ab69-ee36-454b-8bab-42751084ab1c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/DrawerToggleButton.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/DrawerToggleButton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/custom-button/custom-button.component.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/custom-button/custom-button.styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-input/form-input.component.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-input/form-input.styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/create-account/create-account.component.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/create-account/create-account.styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/homepage/homepage.component.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/login/login.component.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/login/login.styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpful_funcs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/root-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/user.actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/user.reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/user.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eS9bwW7gjemk5hI9opS4ejKIyh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3f0ab69-ee36-454b-8bab-42751084ab1c" name="Default Changelist" comment="" />
+      <created>1594304201488</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594304201488</updated>
+      <workItem from="1594304203500" duration="1291000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
